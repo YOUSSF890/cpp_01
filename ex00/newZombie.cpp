@@ -1,9 +1,8 @@
-#include "Zombie.h"
+#include "Zombie.hpp"
 
 
-Zombie* newZombie( std::string name )
+Zombie* newZombie(std::string name)
 {
-    Zombie obj = new Zombie;
-
-    obj.announce();
+    Zombie *obj = new Zombie(name);
+    return (obj);
 }

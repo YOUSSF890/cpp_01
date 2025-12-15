@@ -1,9 +1,9 @@
-NAME = Zombie
+NAME = references
 CC = c++
 FLAG = -Werror -Wextra -Wall -std=c++98
-SRC =main.cpp newZombie.cpp randomChump.cpp Zombie.cpp 
+SRC = main.cpp 
 OBJ = $(SRC:%.cpp=%.o)
-HEADER = Zombie.hpp
+
 
 all: $(NAME)
 
@@ -11,7 +11,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(FLAG) $(OBJ) -o $(NAME)
 
-%.o:%.cpp $(HEADER)
+%.o:%.cpp
 	$(CC) $(FLAG) -c $< -o $@
 
 clean:
