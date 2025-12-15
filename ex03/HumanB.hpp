@@ -6,7 +6,8 @@
 class HumanB
 {
     private:
-        std::string str;
+        std::string name;
+        Weapon *clob;
     public:
         HumanB(std::string name);
         void attack();
