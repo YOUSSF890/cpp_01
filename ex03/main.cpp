@@ -1,14 +1,6 @@
 #include "HumanB.hpp"
 
-void HumanB::attack()
-{
-    std::cout << name << " attacks with their " << clob->getType() << std::endl;
-}
 
-void HumanA::attack()
-{
-    std::cout << name << " attacks with their " << clob->getType() << std::endl;
-}
 
 
 int main()
