@@ -1,63 +1,46 @@
 #include <iostream>
 #include <fstream>
 
-// std::string revres(std::string str,std::string s1,std::string s2)
-// {
-//     int i = 0;
-//     std::string new_str;
-//     while (str[i])
-//     {
-//         if(std::strcmp(s1,s2))
-//         i++;
-//     }
-
-// }
-
+//bash-5.3$ ./f you.txt $'\0' g
 
 int main(int ac, char *av[])
 {
-    int i = 0;
-    std::string text1 = "youssef1 youssef2\n2 youssef   \n 3jdfkr";
+    if (ac < 4)
+        return 1;
+    // if (av[2][0] == '\0')
+    // {
+    //     std::cout << "Error: empty string" << std::endl;
+    //     return 1;
+    // }
+    std::string str = av[1];
+    str += ".replace";
+    std::ifstream f(av[1]);
+    std::ofstream file(str);
+
+    if (!f.is_open() || !file.is_open())
+        return 1;
+
+    int         pos;
+    std::string text1;
     std::string text2;
     std::string s1 = av[2];
     std::string s2 = av[3];
-    std::ofstream file;
 
-    // file.open(av[1]);
-    // std::ifstream f("textFile.txt");
-    // if (!f.is_open() || file.is_open())
-    //     return 1;
-    // std::getline(f, text1);
+
+    std::getline(f, text1,'\0');
 
     while (1)
     {
-        int pos = text1.find(s1);
-        i = pos;
-        if (pos >= 0)
-        {
-            text2 = text2 + text1.substr(0, pos) + s2;
-            text1 = text1.substr(i + 1);
-        }
-        else
+        pos = text1.find(s1);
+        if (pos < 0)
         {
             text2 += text1;
             break ;
         }
+        text2 = text2 + text1.substr(0, pos) + s2;
+        text1 = text1.substr(pos + 1);
     }
-    std::cout << text2 << "\n";
+    file << text2;
 
     return (0);
 }
-
-// #include <iostream>
-// #include <string>
-// using namespace std;
-
-// int main() {
-//     string text = "Hello World World";
-//     int pos = text.find("World");
-//     text = text.substr(pos + 1);
-//     int pos1 = text.find("World");
-
-//         cout << "Found at index: " << pos << " in: " << pos1 << "\n";
-// }

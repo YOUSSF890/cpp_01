@@ -1,14 +1,18 @@
-NAME = file_replace
+NAME = harlFilter
 CC = c++
 FLAG = -Werror -Wextra -Wall -std=c++98
-SRC = main.cpp
+SRC = Harl.cpp main.cpp 
 OBJ = $(SRC:%.cpp=%.o)
+
 
 all: $(NAME)
 
 
 $(NAME): $(OBJ)
 	$(CC) $(FLAG) $(OBJ) -o $(NAME)
+
+%.o:%.cpp Harl.hpp
+	$(CC) $(FLAG) -c $< -o $@
 
 clean:
 	rm -rf $(OBJ)

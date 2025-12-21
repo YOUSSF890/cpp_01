@@ -2,6 +2,7 @@
 
 void HumanB::attack()
 {
+    // handli NULL
     std::cout << name << " attacks with their " << clob->getType() << std::endl;
 }
 

@@ -12,7 +12,6 @@ class HumanB
         HumanB(std::string name);
         void attack();
         void setWeapon(Weapon *club);
-
 };
 
 #endif

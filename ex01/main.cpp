@@ -3,9 +3,11 @@
 int main()
 {
     int i = 0;
-    Zombie *zombie = zombieHorde(10,"youssef");
-
-    while (i < 10)
+    int N = 555555555;
+    Zombie *zombie = zombieHorde(N,"youssef");
+    if (!zombie)
+        return 1;
+    while (i < N)
     {
         zombie[i].announce();
         i++;
