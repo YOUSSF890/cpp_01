@@ -2,7 +2,6 @@
 # define CONTACT_HPP
 
 #include <iostream>
-#include <memory>
 
 class Zombie
 {

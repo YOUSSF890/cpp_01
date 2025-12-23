@@ -1,14 +1,16 @@
 NAME = file_replace
 CC = c++
-FLAG = -Werror -Wextra -Wall -std=c++98
+CFLAG = -Werror -Wextra -Wall -std=c++98
 SRC = main.cpp
 OBJ = $(SRC:%.cpp=%.o)
 
 all: $(NAME)
 
-
 $(NAME): $(OBJ)
-	$(CC) $(FLAG) $(OBJ) -o $(NAME)
+	$(CC) $(CFLAG) $<  -o $(NAME)
+
+%.o:%.cpp 
+	$(CC) $(CFLAG) -c $< -o $@
 
 clean:
 	rm -rf $(OBJ)

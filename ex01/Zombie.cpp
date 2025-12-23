@@ -1,5 +1,11 @@
 #include "Zombie.hpp"
 
+Zombie::Zombie(){}
+
+Zombie::~Zombie()
+{
+     std::cout << "Zombie destroyed\n";
+}
 
 void Zombie::setname(std::string name)
 {

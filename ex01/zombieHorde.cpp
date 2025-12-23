@@ -6,7 +6,9 @@ Zombie* zombieHorde(int N, std::string name)
         return NULL;
     int i = 0;
     Zombie *zombie;
-    zombie = new Zombie[N]; // (std::nothrow)ghati twli tkhdm b new bhal malloc
+    zombie = new(std::nothrow) Zombie[N];
+    if (!zombie)
+        return (NULL);
 
     while (i < N)
     {

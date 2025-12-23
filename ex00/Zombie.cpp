@@ -2,7 +2,7 @@
 
 Zombie::~Zombie()
 {
-    std::cout << "Zombie destroyed\n";
+    std::cout << name << " Zombie destroyed\n";
 }
 
 Zombie::Zombie(std::string name)

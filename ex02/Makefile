@@ -4,9 +4,7 @@ FLAG = -Werror -Wextra -Wall -std=c++98
 SRC = main.cpp 
 OBJ = $(SRC:%.cpp=%.o)
 
-
 all: $(NAME)
-
 
 $(NAME): $(OBJ)
 	$(CC) $(FLAG) $(OBJ) -o $(NAME)

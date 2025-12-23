@@ -1,22 +1,20 @@
 #include <iostream>
 #include <fstream>
 
-//bash-5.3$ ./f you.txt $'\0' g
-
 int main(int ac, char *av[])
 {
-    if (ac < 4)
+    if (ac != 4)
         return 1;
-    // if (av[2][0] == '\0')
-    // {
-    //     std::cout << "Error: empty string" << std::endl;
-    //     return 1;
-    // }
+    if (av[2][0] == '\0')
+    {
+        std::cout << "Error: empty string" << std::endl;
+        return 1;
+    }
     std::string str = av[1];
     str += ".replace";
     std::ifstream f(av[1]);
-    std::ofstream file(str);
-
+    std::ofstream file(str.c_str());
+    
     if (!f.is_open() || !file.is_open())
         return 1;
 
@@ -38,7 +36,7 @@ int main(int ac, char *av[])
             break ;
         }
         text2 = text2 + text1.substr(0, pos) + s2;
-        text1 = text1.substr(pos + 1);
+        text1 = text1.substr(pos + s1.length());
     }
     file << text2;
 
