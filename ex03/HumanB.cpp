@@ -2,13 +2,14 @@
 
 void HumanB::attack()
 {
-    // handli NULL
+    if (!clob)
+        return ;
     std::cout << name << " attacks with their " << clob->getType() << std::endl;
 }
 
 void HumanB::setWeapon(Weapon *club)
 {
-    clob = club;
+    this->clob = club;
 }
 
 HumanB::HumanB(std::string name)
