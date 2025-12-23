@@ -15,4 +15,5 @@ void HumanB::setWeapon(Weapon *club)
 HumanB::HumanB(std::string name)
 {
     this->name = name;
+    this->clob = NULL;
 }

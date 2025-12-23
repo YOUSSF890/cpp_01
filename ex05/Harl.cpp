@@ -25,9 +25,9 @@ void Harl::error()
 
 void Harl::complain(std::string level)
 {
+    int i = 0;
     const std::string av[]   = {"DEBUG","INFO","WARNING","ERROR"};
     void (Harl::*print[])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-    int     i       = 0;
 
     while(i < 4)
     {
